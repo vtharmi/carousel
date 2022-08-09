@@ -21,6 +21,9 @@ const nextSlideHandler = () => {
   if (newPosition < slides - 1) {
       newPosition = newPosition + 1;
   }
+ else if (infinite) {
+  newPosition = 0;
+}
  
   setState(newPosition);
 }
@@ -46,7 +49,6 @@ const nextClickHandler = () => {
         GetCarouselImages(`?slides=${slides}`).then(res => {
           setData(res);
           console.log("result", res);
-         
          })
       }
     
